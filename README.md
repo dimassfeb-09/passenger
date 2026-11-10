@@ -371,8 +371,8 @@ just test [FILTER]         # every test, the IDE driven whole on Avalonia's head
                            # the results in artifacts/test-results
 just screenshot shell.png  # draw the main window to a PNG off-screen (--size 1600x1000 --scale 2)
 just mcp [FOLDER]          # Passenger as an MCP server over a folder, from a clone of the last build
-just publish osx-arm64     # a self-contained Release build (win-x64, win-arm64, linux-x64, linux-arm64 too)
-just package-mac           # the macOS disk image, Apple Silicon; signed with PASSENGER_SIGN_IDENTITY, else ad hoc
+just publish osx-arm64     # a self-contained Release build (osx-x64, win-x64, win-arm64, linux-x64, linux-arm64 too)
+just package-mac           # the macOS disk image, Apple Silicon or Intel; signed with PASSENGER_SIGN_IDENTITY, else ad hoc
 just package-win win-x64   # the Windows installer (or win-arm64), unsigned unless tools/package-win.sh's variables sign it
 just package-linux         # the Linux archive with its install.sh (linux-x64, or linux-arm64), as site/linux.html uses it
 just container-tools       # the tools Passenger debugs and profiles with inside a Linux container, where a build finds them

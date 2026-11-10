@@ -38,9 +38,8 @@ jobs:
     name: Disk image (${{ matrix.rid }})
     strategy:
       fail-fast: false
-      # Apple Silicon only: no Intel Mac build ships.
       matrix:
-        rid: [osx-arm64]
+        rid: [osx-arm64, osx-x64]
     runs-on: macos-latest
     timeout-minutes: 40
     steps:

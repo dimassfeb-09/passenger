@@ -92,8 +92,8 @@ jobs:
     with:
       report: false
 
-  # Each system's package, with the Developer ID or the Windows signature when the secrets hold one. macOS is Apple
-  # Silicon only; the arm64 installer and archive are cross-published on x64 runners.
+  # Each system's package, with the Developer ID or the Windows signature when the secrets hold one. macOS ships for
+  # Apple Silicon and Intel.
   package:
     name: Package (${{ matrix.rid }})
     needs: [version, test]
@@ -105,6 +105,8 @@ jobs:
       matrix:
         include:
           - rid: osx-arm64
+            os: macos-latest
+          - rid: osx-x64
             os: macos-latest
           - rid: win-x64
             os: windows-latest
@@ -414,6 +416,7 @@ jobs:
           Passenger-linux-arm64.tar.gz
           Passenger-linux-x64.tar.gz
           Passenger-macos-arm64.dmg
+          Passenger-macos-x64.dmg
           Passenger-windows-arm64.exe
           Passenger-windows-x64.exe
           PassengerIDE-$VERSION-win-arm64-full.nupkg
